@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  flex: 2 0 auto;
+  margin: 40px;
+}
+
+.card {
+  background-color: #efefef;
+  display: flex;
+  height: 120px;
+  padding-right: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 4px;
+}
+
+p {
+  color: #4ce0b3;
+  font-size: 64px;
+}

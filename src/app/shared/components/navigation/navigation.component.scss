@@ -1,0 +1,17 @@
+nav {
+  align-items: center;
+  background-color: #ed6a5e;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  padding: 0 50px;
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+}
+
+h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: 500;
+}

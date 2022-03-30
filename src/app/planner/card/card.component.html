@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="description">
+    <img class="recipe-image" [src]="imageURL" alt="" />
+    <div class="title">
+      <ng-content></ng-content>
+      <app-button (answer)="onClick()">
+        <img class="trash-icon" src="/assets/svg/trash.svg" />
+      </app-button>
+    </div>
+  </div>
+  <div class="portion-size">{{ portionSize }}p</div>
+</div>

@@ -1,0 +1,7 @@
+<app-button (click)="handleClick()"><img src="/assets/svg/hamburger.svg" /></app-button>
+<div class="menu" [ngClass]="{ open: isMenuOpen }">
+  <ul>
+    <ng-content></ng-content>
+  </ul>
+</div>
+<div class="backdrop" (click)="handleClick()" [ngClass]="{ open: isMenuOpen }"></div>

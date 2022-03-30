@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="cards">
+    <app-card
+      *ngFor="let meal of meals"
+      [imageURL]="meal.imageURL"
+      [portionSize]="meal.portionSize"
+      (answer)="removeMeal(meal.id)"
+    >
+      {{ meal.name }}
+    </app-card>
+
+    <div class="card">
+      <app-button (answer)="addMeal()"><p>+</p></app-button>
+    </div>
+  </div>
+
+  <app-aside>
+    <div><h2>Grocery List:</h2></div>
+
+    <app-grocery-list [groceryList]="groceryList"></app-grocery-list>
+  </app-aside>
+</div>
