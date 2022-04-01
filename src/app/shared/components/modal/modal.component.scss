@@ -1,0 +1,42 @@
+.modal {
+  background-color: #377771;
+  border-radius: 4px;
+  color: white;
+  min-height: 300px;
+  padding: 20px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.backdrop {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.open {
+  display: flex;
+}
+
+button {
+  background: none;
+  border: none;
+
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+}

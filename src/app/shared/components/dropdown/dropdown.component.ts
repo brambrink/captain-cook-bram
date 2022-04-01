@@ -8,11 +8,11 @@ import { Component, OnInit } from "@angular/core";
 export class DropdownComponent implements OnInit {
   isMenuOpen = false;
 
-  handleClick() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-
   constructor() {}
 
   ngOnInit(): void {}
+
+  handleClick() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

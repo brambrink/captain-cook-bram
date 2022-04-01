@@ -1,22 +1,33 @@
 <div class="container">
   <div class="cards">
     <app-card
-      *ngFor="let meal of meals"
-      [imageURL]="meal.imageURL"
-      [portionSize]="meal.portionSize"
-      (answer)="removeMeal(meal.id)"
+      *ngFor="let recipe of plannedRecipes"
+      [imageURL]="recipe.imageURL"
+      [portionSize]="recipe.portionSize"
+      (answer)="removePlannedRecipe(recipe.id)"
     >
-      {{ meal.name }}
+      {{ recipe.name }}
     </app-card>
 
     <div class="card">
-      <app-button (answer)="addMeal()"><p>+</p></app-button>
+      <app-button (click)="handleClick()"><p>+</p></app-button>
     </div>
   </div>
 
   <app-aside>
-    <div><h2>Grocery List:</h2></div>
-
     <app-grocery-list [groceryList]="groceryList"></app-grocery-list>
   </app-aside>
 </div>
+
+<app-modal>
+  <h2 title>Add a recipe to planner</h2>
+  <form [formGroup]="recipeSelector" (ngSubmit)="onSubmit()">
+    <select formControlName="selectedRecipe">
+      <option [value]="0" type="number">Select a recipe</option>
+      <option type="number" *ngFor="let recipe of recipes" [value]="recipe.id">
+        {{ recipe.name }}
+      </option>
+    </select>
+    <app-button type="submit"><p>+</p></app-button>
+  </form>
+</app-modal>

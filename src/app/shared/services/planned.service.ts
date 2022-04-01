@@ -1,8 +1,7 @@
-import { isNgTemplate } from "@angular/compiler";
 import { Injectable } from "@angular/core";
-import { asyncScheduler, Observable, Subject } from "rxjs";
+import { Subject } from "rxjs";
 
-interface Meal {
+interface Recipe {
   name: string;
   portionSize: number;
   imageURL: string;
@@ -14,7 +13,7 @@ interface Meal {
   providedIn: "root",
 })
 export class PlannedService {
-  meals = [
+  plannedRecipes = [
     {
       name: "Spaghetti Bolognese",
       portionSize: 2,
@@ -53,45 +52,31 @@ export class PlannedService {
     },
   ];
 
-  observableMeals: Subject<Meal[]> = new Subject<Meal[]>();
+  plannedRecipesObservable: Subject<Recipe[]> = new Subject<Recipe[]>();
 
   constructor() {}
 
-  addMeal() {
-    this.meals = [
-      ...this.meals,
-      {
-        name: "Boerenkool Stamppot",
-        portionSize: 6,
-        imageURL: "/assets/images/boerenkoolstamppot.jpg",
-        id: 4,
-        ingredients: [
-          { name: "Aardappellen", amount: 600, unit: "gram" },
-          { name: "Boerenkool", amount: 600, unit: "gram" },
-          { name: "Rookworst", amount: 2, unit: "stuks" },
-          { name: "Tomaten", amount: 2, unit: "stuks" },
-        ],
-      },
-    ];
-    this.observableMeals.next(this.meals);
+  planRecipe(selectedRecipe: Recipe) {
+    this.plannedRecipes = [...this.plannedRecipes, selectedRecipe];
+    this.plannedRecipesObservable.next(this.plannedRecipes);
   }
 
-  removeMeal(id: number) {
-    this.meals = this.meals.filter((meal) => meal.id !== id);
-    this.observableMeals.next(this.meals);
+  removePlannedRecipe(id: number) {
+    this.plannedRecipes = this.plannedRecipes.filter((recipe) => recipe.id !== id);
+    this.plannedRecipesObservable.next(this.plannedRecipes);
   }
 
-  get plannedMeals() {
-    return this.meals;
+  get getPlannedRecipes() {
+    return this.plannedRecipes;
   }
 
-  get observablePlannedMeals() {
-    return this.observableMeals;
+  get getRecipeObserver() {
+    return this.plannedRecipesObservable;
   }
 
   get groceryList() {
-    const ingredientsList = this.meals.reduce(
-      (accumulator, meal) => (accumulator = [...accumulator, ...meal.ingredients]),
+    const ingredientsList = this.plannedRecipes.reduce(
+      (accumulator, recipe) => (accumulator = [...accumulator, ...recipe.ingredients]),
       [] as { name: string; amount: number; unit: string }[],
     );
 

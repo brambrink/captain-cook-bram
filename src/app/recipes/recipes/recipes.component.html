@@ -1,1 +1,20 @@
-<p>recipes works!</p>
+<div class="container">
+  <div class="cards">
+    <app-card
+      *ngFor="let recipe of recipes"
+      [imageURL]="recipe.imageURL"
+      [name]="recipe.name"
+      [id]="recipe.id"
+      (click)="handleClick($event)"
+    ></app-card>
+  </div>
+  <app-aside>
+    <h3>{{ selectedRecipe.name }}</h3>
+    Voor {{ selectedRecipe.portionSize }} personen
+    <ul>
+      <li *ngFor="let ingredient of selectedRecipe.ingredients">
+        {{ ingredient.name }} {{ ingredient.amount }} {{ ingredient.unit }}
+      </li>
+    </ul>
+  </app-aside>
+</div>

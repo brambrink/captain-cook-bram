@@ -1,0 +1,10 @@
+<div
+  class="card"
+  [id]="id"
+  (mouseover)="toggleTitle()"
+  (mouseout)="toggleTitle()"
+  [style.backgroundImage]="'url(' + imageURL + ')'"
+>
+  <!-- <img class="recipe-image" [src]="imageURL" alt="" /> -->
+  <div class="title" [ngClass]="{ show: !hideTitle }">{{ name }}</div>
+</div>

@@ -7,8 +7,8 @@ import { AppComponent } from "./app.component";
 import { PlannerModule } from "./planner/planner.module";
 import { RecipesModule } from "./recipes/recipes.module";
 import { SharedModule } from "./shared/shared.module";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],

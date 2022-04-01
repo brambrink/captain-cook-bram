@@ -1,7 +1,13 @@
 .container {
   background-color: #efefef;
   display: flex;
-  height: 110%;
+  height: calc(100% + 30px);
   flex-direction: column;
   padding: 40px;
+  position: fixed;
+  right: 0;
+  top: 90px;
+  bottom: 0;
+  width: 25%;
+  min-width: 320px;
 }
