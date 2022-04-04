@@ -1,18 +1,34 @@
 @font-face {
-    font-family: "Roboto";
-    src: local("Roboto"), url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Regular.ttf) format("truetype");
+}
+
+:root {
+  --gray-light: #efefef;
+  --green-light: #4ce0b3;
+  --green-dark: #377771;
+  --orange-light: #feaf87;
+  --orange-medium: #ff8e72;
+  --orange-dark: #ed6a5e;
+
+  --border-radius-standard: 10px;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-	font-family: "Roboto", Helvetica;
+  font-family: "Roboto", Helvetica;
 }
 
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

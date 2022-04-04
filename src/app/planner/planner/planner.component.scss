@@ -4,38 +4,38 @@
 
 .cards {
   display: flex;
-  gap: 40px;
   flex-direction: column;
+  gap: 40px;
   padding: 40px;
   width: 75%;
 }
 
 .card {
-  border-radius: 4px;
-  height: 200px;
   background-size: cover;
+  border-radius: var(--border-radius-standard);
   display: flex;
   flex-direction: column;
+  height: 200px;
   justify-content: end;
 }
 
 p {
-  color: #4ce0b3;
+  color: var(--green-light);
   font-size: 64px;
 }
 
 select {
-  font-size: 24px;
-  border-radius: 4px;
+  background-color: var(--green-light);
+  border-radius: var(--border-radius-standard);
   border: none;
-  background-color: #4ce0b3;
   color: white;
+  font-size: 24px;
   height: 40px;
   padding: 5px;
 }
 
 form {
+  align-items: center;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }

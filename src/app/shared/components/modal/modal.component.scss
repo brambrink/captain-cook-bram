@@ -1,13 +1,13 @@
 .modal {
-  background-color: #377771;
-  border-radius: 4px;
+  background-color: var(--green-dark);
+  border-radius: var(--border-radius-standard);
   color: white;
-  min-height: 300px;
-  padding: 20px;
-  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 300px;
+  padding: 20px;
+  width: 600px;
 }
 
 .backdrop {
