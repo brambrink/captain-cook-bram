@@ -42,7 +42,7 @@ export class PlannerComponent implements OnInit {
     );
   }
 
-  handleClick() {
+  openModal() {
     this.ModalService.toggleModal();
   }
 

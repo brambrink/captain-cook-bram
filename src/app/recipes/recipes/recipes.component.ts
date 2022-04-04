@@ -26,6 +26,9 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  openModal() {
+    this.ModalService.toggleModal();
+  }
 
   handleClick(event: any) {
     if (event.target.id) {

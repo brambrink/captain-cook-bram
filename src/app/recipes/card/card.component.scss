@@ -8,6 +8,7 @@
 }
 
 .title {
+  border-radius: var(--border-radius-standard);
   display: flex;
   opacity: 0;
   padding: 10px;
@@ -15,6 +16,8 @@
 }
 
 .show {
-  background-color: #4ce0b3;
-  opacity: 0.8;
+  background-color: var(--green-light);
+  display: flex;
+  justify-content: center;
+  opacity: 0.95;
 }
