@@ -30,9 +30,7 @@ export class NewRecipeComponent implements OnInit {
     private ModalService: ModalService,
   ) {}
 
-  ngOnInit(): void {
-    this.ModalService.toggleModal();
-  }
+  ngOnInit(): void {}
 
   addIngredientInput() {
     this.ingredients.push(
