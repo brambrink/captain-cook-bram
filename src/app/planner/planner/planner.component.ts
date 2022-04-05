@@ -1,17 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
+import { Recipe } from "src/app/shared/models/recipe.model";
+
 import { PlannedService } from "src/app/shared/services/planned.service";
 import { RecipesService } from "src/app/shared/services/recipes.service";
 import { ModalService } from "src/app/shared/services/modal.service";
-
-interface Recipe {
-  name: string;
-  portionSize: number;
-  imageURL: string;
-  id: number;
-  ingredients: { name: string; amount: number; unit: string }[];
-}
 
 @Component({
   selector: "app-planner",

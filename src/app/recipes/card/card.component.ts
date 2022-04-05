@@ -10,15 +10,15 @@ export class CardComponent implements OnInit {
   @Input() imageURL!: string;
   @Input() id!: number;
 
-  hideTitle: boolean;
+  showTitle: boolean;
 
   constructor() {
-    this.hideTitle = true;
+    this.showTitle = false;
   }
 
   ngOnInit(): void {}
 
   toggleTitle() {
-    this.hideTitle = !this.hideTitle;
+    this.showTitle = !this.showTitle;
   }
 }

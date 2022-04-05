@@ -1,0 +1,100 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  border-radius: var(--border-radius-standard);
+  padding: 10px;
+  background-color: white;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#name {
+  width: 150px;
+}
+
+#recipe-name {
+  width: 250px;
+}
+
+input {
+  border-radius: var(--border-radius-standard);
+  border: none;
+  padding: 7px;
+  background-color: var(--gray-light);
+  width: 100px;
+}
+
+label {
+  color: black;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: var(--border-radius-standard);
+  background-color: lightgrey;
+  padding: 5px;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ingredient-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: Gainsboro;
+  border-radius: var(--border-radius-standard);
+  padding: 5px;
+  align-items: center;
+}
+
+.ingredient-input {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.remove-ingredient-button {
+  border: none;
+  border-radius: var(--border-radius-standard);
+  background-color: var(--orange-medium);
+  padding: 5px;
+  width: 25px;
+  color: white;
+}
+
+.add-ingredient-button {
+  align-self: center;
+  background-color: WhiteSmoke;
+  border: none;
+  height: 20px;
+  width: 100%;
+  border-radius: var(--border-radius-standard);
+}
+
+app-button {
+  font-size: 60px;
+  color: var(--green-light);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

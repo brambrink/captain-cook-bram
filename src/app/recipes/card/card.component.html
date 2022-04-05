@@ -5,5 +5,5 @@
   (mouseout)="toggleTitle()"
   [style.backgroundImage]="'url(' + imageURL + ')'"
 >
-  <div class="title" [ngClass]="{ show: !hideTitle }">{{ name }}</div>
+  <div class="title" [ngClass]="{ show: showTitle }">{{ name }}</div>
 </div>

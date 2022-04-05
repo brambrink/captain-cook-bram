@@ -1,13 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
-interface Recipe {
-  name: string;
-  portionSize: number;
-  imageURL: string;
-  id: number;
-  ingredients: { name: string; amount: number; unit: string }[];
-}
+import { Recipe } from "../models/recipe.model";
 
 @Injectable({
   providedIn: "root",

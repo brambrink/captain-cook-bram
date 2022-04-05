@@ -1,4 +1,5 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject, Renderer2 } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
 import { Subject } from "rxjs";
 
 @Injectable({
@@ -8,7 +9,7 @@ export class ModalService {
   isOpen: boolean;
   isOpenObservable: Subject<boolean> = new Subject<boolean>();
 
-  constructor() {
+  constructor(@Inject(DOCUMENT) private document: Document) {
     this.isOpen = false;
     this.isOpenObservable.next(this.isOpen);
   }
@@ -16,5 +17,7 @@ export class ModalService {
   toggleModal() {
     this.isOpen = !this.isOpen;
     this.isOpenObservable.next(this.isOpen);
+
+    this.document.body.classList.toggle("is-modal-open", this.isOpen);
   }
 }

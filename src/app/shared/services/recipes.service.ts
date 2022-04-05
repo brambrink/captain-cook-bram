@@ -1,4 +1,7 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
+
+import { Recipe } from "../models/recipe.model";
 
 @Injectable({
   providedIn: "root",
@@ -79,8 +82,14 @@ export class RecipesService {
     },
   ];
 
+  recipesObservable: Subject<Recipe[]> = new Subject<Recipe[]>();
+
   getSelectedRecipe(id: number) {
     return this.recipes.find((recipe) => recipe.id == id);
   }
-  constructor() {}
+
+  addRecipe(recipe: Recipe) {
+    this.recipes = [recipe, ...this.recipes];
+    this.recipesObservable.next(this.recipes);
+  }
 }

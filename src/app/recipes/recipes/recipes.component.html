@@ -10,14 +10,15 @@
     ></app-card>
   </div>
   <app-aside>
-    <h3>{{ selectedRecipe.name }}</h3>
-    Voor {{ selectedRecipe.portionSize }} personen
-    <ul>
-      <li *ngFor="let ingredient of selectedRecipe.ingredients">
-        {{ ingredient.name }} {{ ingredient.amount }} {{ ingredient.unit }}
-      </li>
-    </ul>
+    <div class="recipe" [ngClass]="{ show: showRecipe }">
+      <h3>{{ selectedRecipe.name }}</h3>
+      For {{ selectedRecipe.portionSize }} persons
+      <app-grocery-list [groceryList]="selectedRecipe.ingredients"></app-grocery-list>
+    </div>
   </app-aside>
 </div>
 
-<app-modal> </app-modal>
+<app-modal>
+  <h2 title>Add a new recipe</h2>
+  <app-new-recipe></app-new-recipe>
+</app-modal>

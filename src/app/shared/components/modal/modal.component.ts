@@ -22,7 +22,6 @@ export class ModalComponent implements OnInit {
   }
 
   stopPropagation(event: Event) {
-    console.log(event);
     event.stopPropagation();
   }
 }

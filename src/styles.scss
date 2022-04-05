@@ -24,6 +24,11 @@ body {
   font-family: "Roboto", Helvetica;
 }
 
+.is-modal-open {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
 html,
 body {
   height: 100%;

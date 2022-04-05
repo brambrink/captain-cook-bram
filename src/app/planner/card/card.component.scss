@@ -8,6 +8,12 @@
   padding-right: 20px;
 }
 
+.title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .description {
   align-items: center;
   color: white;
@@ -27,6 +33,12 @@
   app-button {
     background-color: var(--orange-medium);
     border-radius: var(--border-radius-standard);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
   }
 
   .trash-icon {
