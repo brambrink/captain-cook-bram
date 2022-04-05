@@ -16,22 +16,22 @@ export class PlannedService {
       id: 1,
       ingredients: [
         { name: "Spaghetti", amount: 250, unit: "gram" },
-        { name: "Tomatenblokjes", amount: 400, unit: "gram" },
-        { name: "Gehakt", amount: 200, unit: "gram" },
-        { name: "Wortel", amount: 2, unit: "stuks" },
+        { name: "Canned tomato ", amount: 400, unit: "gram" },
+        { name: "Minced meat", amount: 200, unit: "gram" },
+        { name: "Carrots", amount: 150, unit: "gram" },
       ],
     },
     {
       name: "Pasta Pesto",
       portionSize: 2,
       imageURL: "/assets/images/pastapesto.jpg",
-      method: "",
       id: 2,
+      method: "",
       ingredients: [
         { name: "Spaghetti", amount: 200, unit: "gram" },
         { name: "Pesto", amount: 400, unit: "gram" },
-        { name: "Kip", amount: 200, unit: "gram" },
-        { name: "Tomaten", amount: 1.5, unit: "stuks" },
+        { name: "Chicken", amount: 200, unit: "gram" },
+        { name: "Tomatoes", amount: 1.5, unit: "pieces" },
       ],
     },
     {
@@ -42,9 +42,9 @@ export class PlannedService {
       id: 3,
       ingredients: [
         { name: "Spaghetti", amount: 300, unit: "gram" },
-        { name: "Rode pesto", amount: 400, unit: "gram" },
-        { name: "Courgette", amount: 300, unit: "gram" },
-        { name: "Tomaten", amount: 2, unit: "stuks" },
+        { name: "Red pesto", amount: 400, unit: "gram" },
+        { name: "Zucchini", amount: 300, unit: "gram" },
+        { name: "Tomatoes", amount: 2, unit: "pieces" },
       ],
     },
   ];
