@@ -12,7 +12,9 @@
   <app-aside>
     <div class="recipe" [ngClass]="{ show: showRecipe }">
       <h3>{{ selectedRecipe.name }}</h3>
-      For {{ selectedRecipe.portionSize }} persons
+      <p>For {{ selectedRecipe.portionSize }} persons</p>
+      <h4>Method:</h4>
+      <p>{{ selectedRecipe.method }}</p>
       <app-grocery-list [groceryList]="selectedRecipe.ingredients"></app-grocery-list>
     </div>
   </app-aside>

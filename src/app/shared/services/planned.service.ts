@@ -12,6 +12,7 @@ export class PlannedService {
       name: "Spaghetti Bolognese",
       portionSize: 2,
       imageURL: "/assets/images/spaghettibolognese.jpg",
+      method: "",
       id: 1,
       ingredients: [
         { name: "Spaghetti", amount: 250, unit: "gram" },
@@ -24,6 +25,7 @@ export class PlannedService {
       name: "Pasta Pesto",
       portionSize: 2,
       imageURL: "/assets/images/pastapesto.jpg",
+      method: "",
       id: 2,
       ingredients: [
         { name: "Spaghetti", amount: 200, unit: "gram" },
@@ -36,6 +38,7 @@ export class PlannedService {
       name: "Pasta Rood",
       portionSize: 4,
       imageURL: "/assets/images/pastarood.jpg",
+      method: "",
       id: 3,
       ingredients: [
         { name: "Spaghetti", amount: 300, unit: "gram" },

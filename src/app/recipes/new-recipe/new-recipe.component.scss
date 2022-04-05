@@ -38,7 +38,7 @@ label {
   justify-content: space-between;
   border-radius: var(--border-radius-standard);
   background-color: lightgrey;
-  padding: 5px;
+  padding: 10px;
 }
 
 .ingredients {
@@ -68,6 +68,25 @@ label {
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+.input-wrapper-method {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  padding: 10px;
+  border-radius: var(--border-radius-standard);
+  gap: 10px;
+
+  textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 150px;
+    border-radius: var(--border-radius-standard);
+    border: none;
+    background-color: var(--gray-light);
+    padding: 10px;
+  }
 }
 
 .remove-ingredient-button {

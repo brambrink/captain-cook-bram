@@ -21,6 +21,7 @@ export class NewRecipeComponent implements OnInit {
   newRecipeForm = this.formBuilder.group({
     name: "Pizza Margaritha",
     portionSize: 2,
+    method: "",
     ingredients: this.ingredients,
   });
 
@@ -30,7 +31,9 @@ export class NewRecipeComponent implements OnInit {
     private ModalService: ModalService,
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ModalService.toggleModal();
+  }
 
   addIngredientInput() {
     this.ingredients.push(

@@ -10,6 +10,10 @@
         <input id="portion-size" formControlName="portionSize" type="number" />
       </div>
     </div>
+    <div class="input-wrapper-method">
+      <label for="method">Method:</label>
+      <textarea id="method" formControlName="method"></textarea>
+    </div>
     <div class="ingredients" formArrayName="ingredients">
       <div *ngFor="let ingredient of ingredients.controls; index as i">
         <div class="ingredient-row" [formGroupName]="i">
