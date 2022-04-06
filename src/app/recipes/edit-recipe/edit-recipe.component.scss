@@ -1,13 +1,13 @@
 .input-form {
+  background-color: white;
+  border-radius: var(--border-radius-standard);
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: space-between;
-  border-radius: var(--border-radius-standard);
-  padding: 10px;
-  background-color: white;
-  width: 100%;
   margin-top: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 #name {
@@ -19,10 +19,10 @@
 }
 
 input {
+  background-color: var(--gray-light);
   border-radius: var(--border-radius-standard);
   border: none;
   padding: 7px;
-  background-color: var(--gray-light);
   width: 100px;
 }
 
@@ -33,11 +33,11 @@ label {
 }
 
 .description {
+  background-color: lightgrey;
+  border-radius: var(--border-radius-standard);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: var(--border-radius-standard);
-  background-color: lightgrey;
   padding: 10px;
 }
 
@@ -48,72 +48,72 @@ label {
 }
 
 .ingredient-row {
-  display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: Gainsboro;
   border-radius: var(--border-radius-standard);
+  display: flex;
+  justify-content: space-between;
   padding: 5px;
-  align-items: center;
 }
 
 .ingredient-input {
+  align-items: center;
   display: flex;
   gap: 5px;
   justify-content: space-between;
-  align-items: center;
 }
 
 .input-wrapper {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 10px;
 }
 
 .input-wrapper-method {
+  background-color: lightgrey;
+  border-radius: var(--border-radius-standard);
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
-  padding: 10px;
-  border-radius: var(--border-radius-standard);
   gap: 10px;
+  padding: 10px;
 
   textarea {
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 150px;
+    background-color: var(--gray-light);
     border-radius: var(--border-radius-standard);
     border: none;
-    background-color: var(--gray-light);
+    max-width: 100%;
+    min-height: 150px;
+    min-width: 100%;
     padding: 10px;
   }
 }
 
 .remove-ingredient-button {
-  border: none;
-  border-radius: var(--border-radius-standard);
   background-color: var(--orange-medium);
+  border-radius: var(--border-radius-standard);
+  border: none;
+  color: white;
   padding: 5px;
   width: 25px;
-  color: white;
 }
 
 .add-ingredient-button {
   align-self: center;
   background-color: WhiteSmoke;
+  border-radius: var(--border-radius-standard);
   border: none;
   height: 20px;
   width: 100%;
-  border-radius: var(--border-radius-standard);
 }
 
 app-button {
-  font-size: 60px;
   color: var(--green-light);
+  font-size: 60px;
 }
 
 form {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }

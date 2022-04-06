@@ -33,8 +33,8 @@
 .edit-recipe-button {
   align-self: center;
   background-color: WhiteSmoke;
+  border-radius: var(--border-radius-standard);
   border: none;
   height: 20px;
   width: 100%;
-  border-radius: var(--border-radius-standard);
 }
