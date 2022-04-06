@@ -56,9 +56,7 @@ export class EditRecipeComponent implements OnInit {
   }
 
   deleteIngredientInput(i: number) {
-    if (i !== 0) {
-      this.ingredients.removeAt(i);
-    }
+    this.ingredients.removeAt(i);
   }
 
   onSubmit() {
