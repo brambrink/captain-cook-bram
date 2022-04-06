@@ -20,7 +20,7 @@
   </app-aside>
 </div>
 
-<app-modal>
+<app-modal [modalName]="'plan'">
   <h2 title>Add a recipe to planner</h2>
   <form [formGroup]="recipeSelector" (ngSubmit)="onSubmit()">
     <select formControlName="selectedRecipe">

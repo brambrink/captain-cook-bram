@@ -1,6 +1,6 @@
 <div class="container">
   <div class="cards">
-    <div class="card" (click)="openModal()">+</div>
+    <div class="card" (click)="addRecipe()">+</div>
     <app-card
       *ngFor="let recipe of recipes"
       [imageURL]="recipe.imageURL"
@@ -16,17 +16,17 @@
       <h4>Method:</h4>
       <p>{{ selectedRecipe.method }}</p>
       <app-grocery-list [groceryList]="selectedRecipe.ingredients"></app-grocery-list>
-      <button (click)="editRecipe()">Edit this recipe</button>
+      <button class="edit-recipe-button" (click)="editRecipe()">Edit this recipe</button>
     </div>
   </app-aside>
 </div>
 
-<app-modal>
+<app-modal [modalName]="'edit'">
   <h2 title>Edit {{ selectedRecipe.name }}</h2>
   <app-edit-recipe [selectedRecipe]="selectedRecipe"></app-edit-recipe>
 </app-modal>
 
-<!-- <app-modal>
+<app-modal [modalName]="'add'">
   <h2 title>Add a new recipe</h2>
   <app-new-recipe></app-new-recipe>
-</app-modal> -->
+</app-modal>

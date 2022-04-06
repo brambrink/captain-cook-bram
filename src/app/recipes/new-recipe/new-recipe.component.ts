@@ -56,6 +56,6 @@ export class NewRecipeComponent implements OnInit {
     newRecipe.imageURL = "/assets/images/default.jpeg";
 
     this.RecipesService.addRecipe(newRecipe);
-    this.ModalService.toggleModal();
+    this.ModalService.toggleModal("add");
   }
 }

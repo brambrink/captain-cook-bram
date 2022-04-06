@@ -6,18 +6,26 @@ import { Subject } from "rxjs";
   providedIn: "root",
 })
 export class ModalService {
-  isOpen: boolean;
-  isOpenObservable: Subject<boolean> = new Subject<boolean>();
+  activeModalObservable: Subject<string> = new Subject<string>();
+  activeModal: string;
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    this.isOpen = false;
-    this.isOpenObservable.next(this.isOpen);
+    this.activeModal = "";
+    this.activeModalObservable.next(this.activeModal);
   }
 
-  toggleModal() {
-    this.isOpen = !this.isOpen;
-    this.isOpenObservable.next(this.isOpen);
+  toggleModal(name: string) {
+    let isModalOpen = false;
 
-    this.document.body.classList.toggle("is-modal-open", this.isOpen);
+    if (this.activeModal) {
+      this.activeModal = "";
+    } else {
+      this.activeModal = name;
+      isModalOpen = true;
+    }
+
+    this.activeModalObservable.next(this.activeModal);
+
+    this.document.body.classList.toggle("is-modal-open", isModalOpen);
   }
 }

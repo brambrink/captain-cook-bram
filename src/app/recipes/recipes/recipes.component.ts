@@ -35,12 +35,12 @@ export class RecipesComponent implements OnInit {
       (recipe) => (this.selectedRecipe = recipe),
     );
   }
-  openModal() {
-    this.ModalService.toggleModal();
+  addRecipe() {
+    this.ModalService.toggleModal("add");
   }
 
   editRecipe() {
-    this.ModalService.toggleModal();
+    this.ModalService.toggleModal("edit");
   }
 
   handleClick(event: any) {

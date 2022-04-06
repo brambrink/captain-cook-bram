@@ -42,13 +42,13 @@ export class PlannerComponent implements OnInit {
   }
 
   openModal() {
-    this.ModalService.toggleModal();
+    this.ModalService.toggleModal("plan");
   }
 
   onSubmit() {
     if (this.RecipesService.selectRecipe(this.recipeSelector.value.selectedRecipe)) {
       this.planRecipe(this.selectedRecipe);
-      this.ModalService.toggleModal();
+      this.ModalService.toggleModal("plan");
     }
   }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { i18nMetaToJSDoc } from "@angular/compiler/src/render3/view/i18n/meta";
+import { Component, Input, OnInit } from "@angular/core";
 
 import { ModalService } from "src/app/shared/services/modal.service";
 
@@ -8,17 +9,20 @@ import { ModalService } from "src/app/shared/services/modal.service";
   styleUrls: ["./modal.component.scss"],
 })
 export class ModalComponent implements OnInit {
+  @Input() modalName!: string;
   isOpen: boolean;
 
   constructor(private ModalService: ModalService) {
     this.isOpen = false;
-    this.ModalService.isOpenObservable.subscribe((isOpen) => (this.isOpen = isOpen));
+    this.ModalService.activeModalObservable.subscribe((name) => {
+      this.isOpen = name === this.modalName ? true : false;
+    });
   }
 
   ngOnInit(): void {}
 
-  handleClick() {
-    this.ModalService.toggleModal();
+  toggleModal() {
+    this.ModalService.toggleModal(this.modalName);
   }
 
   stopPropagation(event: Event) {

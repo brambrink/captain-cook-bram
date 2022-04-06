@@ -67,6 +67,6 @@ export class EditRecipeComponent implements OnInit {
 
     this.RecipesService.editRecipe(edittedRecipe);
     this.RecipesService.selectRecipe(this.selectedRecipe.id);
-    this.ModalService.toggleModal();
+    this.ModalService.toggleModal("edit");
   }
 }
