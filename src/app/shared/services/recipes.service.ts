@@ -20,6 +20,7 @@ export class RecipesService {
         { name: "Canned tomato ", amount: 400, unit: "gram" },
         { name: "Minced meat", amount: 200, unit: "gram" },
         { name: "Carrots", amount: 150, unit: "gram" },
+        { name: "Red wine", amount: 1, unit: "bottle" },
       ],
     },
     {
@@ -65,8 +66,9 @@ export class RecipesService {
       name: "Hutspot",
       portionSize: 3,
       imageURL: "/assets/images/hutspot.jpg",
-      method: "",
       id: 5,
+      method:
+        "PEEL the potatoes and chop them into chunks. ADD the potatoes to the large pan along with water and salt and bring to a boil. Meanwhile PEEL the carrots and also chop them into chunks. Also ADD them to the boiling water along with the bay leafs. PEEL the onion and coarsely chop them. Also ADD them to the large pan and cook until the potatoes are done.",
       ingredients: [
         { name: "Potatoes", amount: 400, unit: "gram" },
         { name: "Carrots", amount: 600, unit: "gram" },
@@ -77,7 +79,7 @@ export class RecipesService {
     {
       name: "Stamppot Zuurkool",
       portionSize: 8,
-      imageURL: "/assets/images/zurekool.jpg",
+      imageURL: "/assets/images/zuurkool.jpg",
       method: "",
       id: 6,
       ingredients: [

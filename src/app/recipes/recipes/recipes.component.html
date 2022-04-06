@@ -21,12 +21,12 @@
   </app-aside>
 </div>
 
-<app-modal [modalName]="'edit'">
+<app-modal modalName="edit">
   <h2 title>Edit {{ selectedRecipe.name }}</h2>
   <app-edit-recipe [selectedRecipe]="selectedRecipe"></app-edit-recipe>
 </app-modal>
 
-<app-modal [modalName]="'add'">
+<app-modal modalName="add">
   <h2 title>Add a new recipe</h2>
   <app-new-recipe></app-new-recipe>
 </app-modal>
