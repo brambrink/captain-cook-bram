@@ -31,11 +31,10 @@ export class NewRecipeComponent implements OnInit {
     private ModalService: ModalService,
   ) {}
 
-  ngOnInit(): void {
-    this.ModalService.toggleModal();
-  }
+  ngOnInit(): void {}
 
   addIngredientInput() {
+    console.log(this.ingredients);
     this.ingredients.push(
       this.formBuilder.group({
         name: "",
@@ -56,7 +55,6 @@ export class NewRecipeComponent implements OnInit {
     newRecipe.id = Math.round(Math.random() * 1000);
     newRecipe.imageURL = "/assets/images/default.jpeg";
 
-    console.log(newRecipe);
     this.RecipesService.addRecipe(newRecipe);
     this.ModalService.toggleModal();
   }

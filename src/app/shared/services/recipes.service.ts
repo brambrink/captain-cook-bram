@@ -90,13 +90,34 @@ export class RecipesService {
   ];
 
   recipesObservable: Subject<Recipe[]> = new Subject<Recipe[]>();
+  selectedRecipeObservable: Subject<Recipe> = new Subject<Recipe>();
 
-  getSelectedRecipe(id: number) {
-    return this.recipes.find((recipe) => recipe.id == id);
+  selectRecipe(id: number) {
+    const foundRecipe = this.recipes.find((recipe) => recipe.id == id);
+    if (foundRecipe) {
+      this.selectedRecipeObservable.next(foundRecipe);
+      return true;
+    } else {
+      return undefined;
+    }
   }
 
   addRecipe(recipe: Recipe) {
     this.recipes = [recipe, ...this.recipes];
     this.recipesObservable.next(this.recipes);
+  }
+
+  removeRecipe(id: number) {
+    this.recipes = this.recipes.filter((recipe) => recipe.id !== id);
+    this.recipesObservable.next(this.recipes);
+  }
+
+  editRecipe(edittedRecipe: Recipe) {
+    this.recipes = this.recipes.map((recipe) => {
+      if (recipe.id == edittedRecipe.id) {
+        recipe = edittedRecipe;
+      }
+      return recipe;
+    });
   }
 }

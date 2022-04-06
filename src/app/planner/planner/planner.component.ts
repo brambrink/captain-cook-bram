@@ -15,6 +15,7 @@ import { ModalService } from "src/app/shared/services/modal.service";
 export class PlannerComponent implements OnInit {
   plannedRecipes: Recipe[];
   recipes: Recipe[];
+  selectedRecipe: Recipe;
 
   recipeSelector = this.formBuilder.group({
     selectedRecipe: 0,
@@ -28,11 +29,15 @@ export class PlannerComponent implements OnInit {
   ) {
     this.plannedRecipes = this.PlannedService.getPlannedRecipes;
     this.recipes = this.RecipesService.recipes;
+    this.selectedRecipe = {} as Recipe;
   }
 
   ngOnInit(): void {
     this.PlannedService.plannedRecipesObservable.subscribe(
       (recipes: Recipe[]) => (this.plannedRecipes = recipes),
+    );
+    this.RecipesService.selectedRecipeObservable.subscribe(
+      (recipe) => (this.selectedRecipe = recipe),
     );
   }
 
@@ -41,9 +46,8 @@ export class PlannerComponent implements OnInit {
   }
 
   onSubmit() {
-    const selectedRecipe = this.getSelectedRecipe(this.recipeSelector.value.selectedRecipe);
-    if (selectedRecipe) {
-      this.planRecipe(selectedRecipe);
+    if (this.RecipesService.selectRecipe(this.recipeSelector.value.selectedRecipe)) {
+      this.planRecipe(this.selectedRecipe);
       this.ModalService.toggleModal();
     }
   }
@@ -57,7 +61,7 @@ export class PlannerComponent implements OnInit {
   }
 
   getSelectedRecipe(id: number) {
-    return this.RecipesService.getSelectedRecipe(id);
+    return this.RecipesService.selectRecipe(id);
   }
 
   get groceryList() {

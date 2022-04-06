@@ -1,0 +1,43 @@
+<form [formGroup]="editRecipeForm" (ngSubmit)="onSubmit()">
+  <div class="input-form">
+    <div class="description">
+      <div class="input-wrapper">
+        <label for="name">Name:</label>
+        <input id="recipe-name" formControlName="name" />
+      </div>
+      <div class="input-wrapper" class="portion">
+        <label for="portion-size">Portion size: </label>
+        <input id="portion-size" formControlName="portionSize" type="number" />
+      </div>
+    </div>
+    <div class="input-wrapper-method">
+      <label for="method">Method:</label>
+      <textarea id="method" formControlName="method"></textarea>
+    </div>
+    <div class="ingredients" formArrayName="ingredients">
+      <div *ngFor="let ingredient of ingredients.controls; index as i">
+        <div class="ingredient-row" [formGroupName]="i">
+          <div class="ingredient-input">
+            <div class="input-wrapper">
+              <label for="name">Name:</label>
+              <input id="name" formControlName="name" />
+            </div>
+            <div class="input-wrapper">
+              <label for="amount">Amount:</label>
+              <input id="amount" formControlName="amount" type="number" />
+            </div>
+            <div class="input-wrapper">
+              <label for="unit">Unit:</label>
+              <input id="unit" formControlName="unit" />
+            </div>
+          </div>
+          <button type="button" class="remove-ingredient-button" (click)="deleteIngredientInput(i)">
+            x
+          </button>
+        </div>
+      </div>
+      <button type="button" class="add-ingredient-button" (click)="addIngredientInput()">+</button>
+    </div>
+  </div>
+  <app-button class="submit-button" type="submit">+</app-button>
+</form>

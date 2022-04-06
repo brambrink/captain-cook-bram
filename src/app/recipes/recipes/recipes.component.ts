@@ -17,22 +17,37 @@ export class RecipesComponent implements OnInit {
 
   constructor(private ModalService: ModalService, private RecipesService: RecipesService) {
     this.recipes = this.RecipesService.recipes;
-    this.selectedRecipe = {} as Recipe;
+    this.selectedRecipe = {
+      name: "",
+      portionSize: 0,
+      imageURL: "",
+      method: "",
+      id: 0,
+      ingredients: [{ name: "", amount: 0, unit: "" }],
+    };
+
     this.showRecipe = false;
   }
 
   ngOnInit(): void {
-    this.RecipesService.recipesObservable.subscribe((data) => (this.recipes = data));
+    this.RecipesService.recipesObservable.subscribe((recipes) => (this.recipes = recipes));
+    this.RecipesService.selectedRecipeObservable.subscribe(
+      (recipe) => (this.selectedRecipe = recipe),
+    );
   }
   openModal() {
     this.ModalService.toggleModal();
   }
 
+  editRecipe() {
+    this.ModalService.toggleModal();
+  }
+
   handleClick(event: any) {
     if (event.target.id) {
-      const findRecipe = this.recipes.find((recipe) => recipe.id == event.target.id);
-      if (findRecipe) {
-        this.selectedRecipe = findRecipe;
+      this.RecipesService.selectRecipe(event.target.id);
+
+      if (this.selectedRecipe) {
         this.showRecipe = true;
       } else {
         this.showRecipe = false;
