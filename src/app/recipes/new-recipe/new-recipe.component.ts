@@ -34,7 +34,6 @@ export class NewRecipeComponent implements OnInit {
   ngOnInit(): void {}
 
   addIngredientInput() {
-    console.log(this.ingredients);
     this.ingredients.push(
       this.formBuilder.group({
         name: "",

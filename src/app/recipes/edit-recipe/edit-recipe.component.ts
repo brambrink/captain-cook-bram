@@ -63,7 +63,6 @@ export class EditRecipeComponent implements OnInit {
 
   onSubmit() {
     const edittedRecipe = this.editRecipeForm.value;
-    console.log(edittedRecipe);
 
     this.RecipesService.editRecipe(edittedRecipe);
     this.RecipesService.selectRecipe(this.selectedRecipe.id);
