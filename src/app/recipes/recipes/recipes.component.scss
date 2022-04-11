@@ -32,9 +32,10 @@
 
 .edit-recipe-button {
   align-self: center;
-  background-color: WhiteSmoke;
+  background-color: var(--green-dark);
   border-radius: var(--border-radius-standard);
   border: none;
-  height: 20px;
+  color: white;
+  padding: 10px;
   width: 100%;
 }

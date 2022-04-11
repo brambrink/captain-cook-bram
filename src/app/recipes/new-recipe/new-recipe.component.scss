@@ -94,22 +94,43 @@ label {
   border-radius: var(--border-radius-standard);
   border: none;
   color: white;
+  cursor: pointer;
   padding: 5px;
   width: 25px;
 }
 
 .add-ingredient-button {
   align-self: center;
-  background-color: WhiteSmoke;
+  background-color: var(--orange-medium);
   border-radius: var(--border-radius-standard);
   border: none;
-  height: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
   width: 100%;
+
+  &:hover {
+    background-color: var(--orange-dark);
+    color: white;
+  }
 }
 
 app-button {
+  background-color: white;
+  border-radius: 100px;
   color: var(--green-light);
+  display: flex;
   font-size: 60px;
+  height: 50px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: auto;
+  width: 50px;
+
+  &:hover {
+    background-color: var(--orange-dark);
+    color: white;
+  }
 }
 
 form {

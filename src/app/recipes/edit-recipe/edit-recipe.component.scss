@@ -100,16 +100,36 @@ label {
 
 .add-ingredient-button {
   align-self: center;
-  background-color: WhiteSmoke;
+  background-color: var(--orange-medium);
   border-radius: var(--border-radius-standard);
+  color: white;
   border: none;
-  height: 20px;
+  cursor: pointer;
+  padding: 10px;
   width: 100%;
+
+  &:hover {
+    background-color: var(--orange-dark);
+    color: white;
+  }
 }
 
 app-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
   color: var(--green-light);
   font-size: 60px;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  padding: auto;
+  background-color: white;
+
+  &:hover {
+    background-color: var(--orange-dark);
+    color: white;
+  }
 }
 
 form {
